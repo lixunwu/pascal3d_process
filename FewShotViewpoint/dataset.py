@@ -174,8 +174,8 @@ class Pascal3D(data.Dataset):
         viewpoint = viewpoint.astype('int')
 
         # load point_clouds
-        point_cloud_path = os.path.join(self.root_dir, 'Pointclouds', cls, '{:02d}'.format(
-            cad_index), 'compressed.ply')
+        point_cloud_path = os.path.join(
+            self.root_dir, 'Pointclouds', cls, '{:02d}'.format(cad_index), 'compressed.ply')
         point_cloud = read_pointcloud(point_cloud_path, self.point_num)
 
         return {'img': img, 'point_cloud': point_cloud, 'label': viewpoint, 'class': cls}
